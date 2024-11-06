@@ -15,10 +15,10 @@ const adicionarNovaConta = () => {
 }
 
 const formatarData = (data) => {
-  const date = new Date(data)
-  const dia = String(date.getDate()).padStart(2, '0')
-  const mes = String(date.getMonth() + 1).padStart(2, '0')
-  const ano = date.getFullYear()
+  const date = new Date(data + 'T00:00:00')
+  const dia = String(date.getUTCDate()).padStart(2, '0')
+  const mes = String(date.getUTCMonth() + 1).padStart(2, '0')
+  const ano = date.getUTCFullYear()
   return `${dia}/${mes}/${ano}`
 }
 </script>
